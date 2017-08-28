@@ -8,3 +8,4 @@ C:\Users\danie\Source\Repos\Pizzeriaa\Pizzeriaa\bin\Debug\netcoreapp1.1\Pizzeria
 C:\Users\danie\Source\Repos\Pizzeriaa\Pizzeriaa\bin\Debug\netcoreapp1.1\Pizzeriaa.pdb
 C:\Users\danie\Source\Repos\Pizzeriaa\Pizzeriaa\obj\Debug\netcoreapp1.1\Pizzeriaa.dll
 C:\Users\danie\Source\Repos\Pizzeriaa\Pizzeriaa\obj\Debug\netcoreapp1.1\Pizzeriaa.pdb
+C:\Users\danie\Source\Repos\Pizzeriaa\Pizzeriaa\obj\Debug\netcoreapp1.1\Pizzeriaa.AssemblyInfoInputs.cache

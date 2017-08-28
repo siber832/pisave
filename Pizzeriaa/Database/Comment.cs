@@ -19,7 +19,9 @@ namespace Pizzeria.Database
         [Required]
         public DateTime Date { get; set; }
         [Required]
-        public User User { get; set; }
+        public String User { get; set; }
+        [Required]
+        public String Pizza { get; set; }
 
     }
 }

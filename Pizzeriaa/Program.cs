@@ -19,6 +19,7 @@ namespace Pizzeria
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                
                 .Build();
             host.Run();
         }

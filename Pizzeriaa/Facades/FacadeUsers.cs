@@ -14,7 +14,7 @@ namespace Pizzeria.Facades
         public PizzeriaContext Context { set; private get; }
 
         public Errors Insert(String loguin, String password, String name, String surnames, String email) {  
-            User user = new User() { Loguin = loguin, Password = password, Surnames = surnames, Email = email };
+            User user = new User() { Loguin = loguin, Password = password, Name = name, Surnames = surnames, Email = email };
               try
               {
                   Context.Users.Add(user);
@@ -23,16 +23,31 @@ namespace Pizzeria.Facades
               }
               catch (Exception e)
               {
+                    Context.Users.Remove(user);
                   return Errors.INSERTION_ERROR;
               }
            
         }
+
         public User GetUser(String loguin)
         {
             User user = Context.Users
-                    .Where(u => u.Loguin == loguin)
+                    .Where(u => u.Loguin.Equals(loguin))
                     .FirstOrDefault();
             return user;
+        }
+        
+        public String GetId(String login)
+        {
+            return GetUser(login).UserId;
+        }
+
+        public Errors Loguin(String loguin, String password)
+        {
+            User user = GetUser(loguin);
+            if (user == null) return Errors.LOGIN_DONT_EXISTS;
+            if (!user.Password.Equals(password)) return Errors.PASSWORD_DONT_MATCH;
+            return Errors.NO_ERROR;
         }
 
         public Errors Update(String oldLoguin, String loguin, String password, String name, String surnames)

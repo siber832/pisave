@@ -14,6 +14,9 @@ namespace Pizzeria.Database
         public String Name { get; set; }
         [Required]
         public String Photo { get; set; }
+        [Required]
+        public decimal Price { get; set; }
+
         public ICollection<Ingredients> Ingredient { get; set; }
         public ICollection<Comment> Coment { get; set; }
 
@@ -21,6 +24,11 @@ namespace Pizzeria.Database
         {
             Ingredient = new LinkedList<Ingredients>();
             Coment = new LinkedList<Comment>();
+        }
+
+        public void AddIngredientPrice(decimal ingredientPrice)
+        {
+            Price = Price + ingredientPrice;
         }
     }
 }

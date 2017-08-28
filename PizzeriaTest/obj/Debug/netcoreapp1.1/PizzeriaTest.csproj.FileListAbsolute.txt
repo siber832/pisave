@@ -13,3 +13,4 @@ C:\Users\danie\Source\Repos\Pizzeriaa\PizzeriaTest\obj\Debug\netcoreapp1.1\Pizze
 C:\Users\danie\Source\Repos\Pizzeriaa\PizzeriaTest\obj\Debug\netcoreapp1.1\PizzeriaTest.pdb
 C:\Users\danie\Source\Repos\Pizzeriaa\PizzeriaTest\bin\Debug\netcoreapp1.1\Pizzeriaa.dll
 C:\Users\danie\Source\Repos\Pizzeriaa\PizzeriaTest\bin\Debug\netcoreapp1.1\Pizzeriaa.pdb
+C:\Users\danie\Source\Repos\Pizzeriaa\PizzeriaTest\obj\Debug\netcoreapp1.1\PizzeriaTest.AssemblyInfoInputs.cache

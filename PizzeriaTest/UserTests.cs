@@ -59,7 +59,7 @@ namespace PizzeriaTests
         
         private void InsertUser()
         {
-            Facade = new FacadeUsers() { Context = new PizzeriaContext(options) };
+            Facade = new FacadeUsers() { Context = new PizzeriaContext(options) { Test = true } };
             Errors err = Facade.Insert("Loguin", "Password", "Name", "Surname", "Email");
             Assert.Equal(Errors.NO_ERROR, err);
         }

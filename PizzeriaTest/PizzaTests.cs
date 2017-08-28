@@ -25,29 +25,29 @@ namespace PizzeriaTest
         [Fact]
         public void InsertPizzaNoError()
         {
-            Facade = new FacadePizza() { Context = new PizzeriaContext(options) };
-            Errors err = Facade.Insert("Loguin", "Path");
-            Assert.Equal(Errors.NO_ERROR, err);
+            Facade = new FacadePizza() { Context = new PizzeriaContext(options) { Test = true } };
+            String id = Facade.AddPizza("Loguin", "Path");
+            Assert.NotEqual("Error", id);
         }
         [Fact]
         public void AddIngredient() {
            
-            Facade = new FacadePizza() { Context = new PizzeriaContext(options) };
-            Facade.Insert("name","photo");  
+            Facade = new FacadePizza() { Context = new PizzeriaContext(options) { Test = true } };
+            Facade.AddPizza("name","photo");  
         }
         [Fact]
         public void AddComment()
         {
           
-            Facade = new FacadePizza() { Context = new PizzeriaContext(options) };
-            Facadeuser = new FacadeUsers() { Context = new PizzeriaContext(options) };
+            Facade = new FacadePizza() { Context = new PizzeriaContext(options) { Test = true } };
+            Facadeuser = new FacadeUsers() { Context = new PizzeriaContext(options) { Test = true } };
             Errors err = Facadeuser.Insert("Loguin", "Password", "Name", "Surname", "Email");
             User user = Facadeuser.GetUser("Loguin");
             Assert.Equal(user.Loguin, "Loguin");
-            Facade.Insert("name","photo");
-            Pizza pizza = Facade.GetPizza("name");
-            Assert.Equal(pizza.Name, "name");
-            Facade.AddComment(pizza.PizzaId, user.Id, "blablabñlablabla");
+            String pizzaId = Facade.AddPizza("name","photo");
+            
+            Assert.NotEqual(pizzaId, "Error");
+            Facade.AddComment(pizzaId, user.UserId, "blablabñlablabla");
             
         }
     }
